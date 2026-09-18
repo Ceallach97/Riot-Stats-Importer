@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riot Stats Importer — Private post-game analysis</title>
+  <meta name="description" content="A private Windows prototype for importing authorized League of Legends post-game statistics into Excel or Google Sheets.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Riot Stats Importer home">
+      <span class="brand-mark" aria-hidden="true">RS</span>
+      <span>Riot Stats Importer</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#product">Product</a>
+      <a href="#flow">User flow</a>
+      <a href="#data">Data &amp; privacy</a>
+      <a href="#access">Requested access</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Private Windows prototype · Post-game only</p>
+        <h1>Match data, organized for team review.</h1>
+        <p class="lead">Riot Stats Importer turns authorized League of Legends match records into structured Excel or Google Sheets rows for retrospective player and team analysis.</p>
+        <div class="status-row" aria-label="Product characteristics">
+          <span>No real-time data</span>
+          <span>No monetization</span>
+          <span>No public rankings</span>
+        </div>
+      </div>
+      <div class="product-panel" aria-label="Product summary">
+        <div class="panel-heading">
+          <span>IMPORT SESSION</span>
+          <span class="status">PROTOTYPE</span>
+        </div>
+        <div class="metric"><span>Input</span><strong>1–3 Match IDs</strong></div>
+        <div class="metric"><span>Source</span><strong>Documented Riot APIs</strong></div>
+        <div class="metric"><span>Output</span><strong>Excel / Google Sheets</strong></div>
+        <div class="roles" aria-label="Supported team roles">
+          <span>TOP</span><span>JGL</span><span>MID</span><span>BOT</span><span>SUP</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="product" class="section split">
+      <div>
+        <p class="section-label">01 — Product</p>
+        <h2>A narrow tool for a clear task</h2>
+      </div>
+      <div class="prose">
+        <p>The application is used by its developer and a small private team. A user enters up to three match identifiers, selects the relevant team side, and starts the import after each game.</p>
+        <p>The current prototype reads completed match records through Riot's documented Match-V5 API. It writes match metadata and role-specific performance statistics into an existing team workbook without providing live assistance or influencing gameplay decisions.</p>
+      </div>
+    </section>
+
+    <section id="flow" class="section">
+      <p class="section-label">02 — User flow</p>
+      <h2>From completed match to review sheet</h2>
+      <ol class="flow-grid">
+        <li><span>01</span><h3>Choose destination</h3><p>Select a local Excel workbook or a privately controlled Google Sheet.</p></li>
+        <li><span>02</span><h3>Provide match input</h3><p>Enter one to three completed match IDs and choose Blue or Red side.</p></li>
+        <li><span>03</span><h3>Retrieve authorized data</h3><p>The desktop app requests post-game records over HTTPS from documented Riot endpoints.</p></li>
+        <li><span>04</span><h3>Write structured rows</h3><p>Top, Jungle, Mid, Bottom and Support statistics are added for retrospective analysis.</p></li>
+      </ol>
+    </section>
+
+    <section id="data" class="section split privacy-block">
+      <div>
+        <p class="section-label">03 — Data &amp; privacy</p>
+        <h2>Local credentials. Controlled destinations.</h2>
+      </div>
+      <div class="check-list">
+        <p><span>✓</span> The Riot API key is entered locally and is never embedded in the executable.</p>
+        <p><span>✓</span> Optional key storage uses Windows Data Protection API for the current Windows account.</p>
+        <p><span>✓</span> Google mode sends match data to the user's own Apps Script deployment; it does not transmit the Riot API key.</p>
+        <p><span>✓</span> This website uses no analytics, advertising, cookies, accounts or data-entry forms.</p>
+        <p><span>✓</span> The product does not sell data or operate as a data broker.</p>
+      </div>
+    </section>
+
+    <section id="access" class="section">
+      <p class="section-label">04 — Requested access</p>
+      <h2>Consent-based Custom Game support</h2>
+      <div class="access-grid">
+        <article>
+          <p class="article-kicker">RSO</p>
+          <h3>Explicit player authorization</h3>
+          <p>The proposed RSO flow would let every participating user sign in with Riot and explicitly authorize access to their own Custom Game data. Client secrets would be stored on a secure backend, never in the distributed executable.</p>
+        </article>
+        <article>
+          <p class="article-kicker">TOURNAMENT-V5</p>
+          <h3>Reliable future scrims</h3>
+          <p>Tournament Codes would be used for future organized team scrims so match identifiers and results can be collected through Riot's documented tournament workflow.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section boundaries">
+      <p class="section-label">05 — Product boundaries</p>
+      <div class="boundary-grid">
+        <div><strong>Not provided</strong><p>Real-time information, scouting, public match histories, player shaming, reports, betting, advertising, MMR or ELO estimates.</p></div>
+        <div><strong>Intended value</strong><p>Private post-game reflection, team improvement and consistent record keeping using data participants are authorized to analyze.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>Riot Stats Importer</strong>
+      <p>Independent private prototype by <a href="https://github.com/Ceallach97">Ceallach97</a>.</p>
+    </div>
+    <div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+    <p class="legal">Riot Stats Importer isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</p>
+  </footer>
+</body>
+</html>
